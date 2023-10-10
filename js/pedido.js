@@ -21,6 +21,10 @@ const doces = [
 
 const allItems = lanches.concat(bebidas, doces);
 
+document.getElementById("cliente").addEventListener("submit", function (event) {
+    event.preventDefault();
+});
+
 function calcularEExibirTotalCarrinho() {
     let totalCarrinho = 0;
     allItems.forEach(item => {
@@ -28,7 +32,7 @@ function calcularEExibirTotalCarrinho() {
     });
 
     const visualizarPedidoButton = document.getElementById('visualizarPedidoButton');
-    visualizarPedidoButton.textContent = `(R$ ${totalCarrinho.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}) Visualizar Pedido 🡢`;
+    visualizarPedidoButton.textContent = `(R$ ${totalCarrinho.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}) Visualizar Pedido >`;
 }
 
 function adicionarAoCarrinho(key) {
